@@ -312,6 +312,13 @@ say_recipe('es6')
 gem 'sprockets', '>= 3.4.0'
 gem 'sprockets-es6'
 
+inject_into_file 'config/application.rb', after: 'require "sprockets/railtie"' do
+  <<-ES6
+
+  require "sprockets/es6"
+  ES6
+end
+
 # >---------------------------------[ SASS ]----------------------------------<
 
 @current_recipe = "sass"
